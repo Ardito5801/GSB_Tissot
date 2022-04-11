@@ -1,0 +1,29 @@
+﻿<Window x:Class="WpfGSBFrais.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfGSBFrais"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Name="Maingrid">
+        <RadioButton x:Name="radioButton" Content="Créé" IsChecked="{Binding IsCree}" HorizontalAlignment="Left" Margin="29,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.116,0.344"/>
+        <RadioButton x:Name="radioButton1" Content="Cloturé" IsChecked="{Binding  IsCloture}" HorizontalAlignment="Left" Margin="102,10,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioButton2" Content=" Validé/Paiement" IsChecked="{Binding IsValid}" HorizontalAlignment="Left" Margin="181,10,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioButton4" Content="Remboursé" IsChecked="{Binding IsRefund}" HorizontalAlignment="Left" Margin="314,10,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBoxMois" ItemsSource="{Binding MoisFicheFrais}" SelectedItem="{Binding SelectedMois}" HorizontalAlignment="Left" Margin="29,35,0,0" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="LigneFraisHorsForfait" ItemsSource="{Binding ListLigneFraisHorsForfait }" SelectedItem="{Binding SelectedLFHF}"  HorizontalAlignment="Left" Margin="361,0,0,0" VerticalAlignment="Center" Height="134" Width="425"/>
+        <Label x:Name="label" Content="Repas" HorizontalAlignment="Left" Margin="399,31,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.024,0.654"/>
+        <Label x:Name="label1" Content="Nuités" HorizontalAlignment="Left" Margin="539,27,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Frais Km" HorizontalAlignment="Left" Margin="690,22,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="Forfait étape" HorizontalAlignment="Left" Margin="383,105,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="listFicheFrais" ItemsSource="{Binding ListFicheFrais}" SelectedItem="{Binding SelectedFicheFrais}" HorizontalAlignment="Left" Height="366" Margin="10,62,0,0" VerticalAlignment="Top" Width="342"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="361,54,0,0" TextWrapping="Wrap" Text="{Binding Repas}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="24" Margin="501,53,0,0" TextWrapping="Wrap" Text="{Binding Nuite}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="24" Margin="657,53,0,0" TextWrapping="Wrap" Text="{Binding Fraiskm}" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="477,108,0,0" TextWrapping="Wrap" Text="{Binding Forfaitetape}" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="button" Content="Enregistrer Frais" Command="{Binding ButtonEnregistrer}" HorizontalAlignment="Left" Margin="427,352,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="button1" Content="Reporter Frais" Command="{Binding ButtonReporter}" HorizontalAlignment="Left" Margin="657,352,0,0" VerticalAlignment="Top" Width="98"/>
+        <Button x:Name="button2" Content="Supprimer Frais" Command="{Binding ButtonSupprimer}"  HorizontalAlignment="Left" Margin="543,352,0,0" VerticalAlignment="Top" Width="97"/>
+    </Grid>
+</Window>
